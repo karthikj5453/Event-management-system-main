@@ -62,13 +62,13 @@ export default function SparklesLogo() {
         </div>
       </div>
 
-      <div className="relative z-10 -mt-20 h-40 w-full overflow-hidden [mask-image:radial-gradient(circle,white,transparent_80%)]">
+      <div className="relative z-10 -mt-40 h-[32rem] md:h-[40rem] w-full overflow-hidden [mask-image:radial-gradient(circle,white,transparent)] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom,#e60a64,transparent_70%)] before:opacity-40 after:absolute after:top-1/2 after:-left-1/2 after:aspect-[1/0.7] after:w-[200%] after:rounded-[100%] after:border-t after:border-[#c5769066] after:bg-background">
         <SparklesCore
           id="tsparticles"
           background="transparent"
           particleDensity={200}
           particleColor="hsl(var(--foreground))"
-          className="absolute inset-x-0 bottom-0 h-full w-full"
+          className="absolute inset-x-0 bottom-0 h-full w-full [mask-image:radial-gradient(circle,white,transparent_85%)]"
         />
       </div>
     </div>

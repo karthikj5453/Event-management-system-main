@@ -38,6 +38,7 @@ export default function Header2() {
 
   const getDashboardLink = () => {
     if (!user) return "/";
+
     switch (user.role) {
       case "admin":
         return "/admin/dashboard";
@@ -52,6 +53,7 @@ export default function Header2() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -125,7 +127,7 @@ export default function Header2() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-500 shadow-lg shadow-indigo-500/20">
                     <Zap className="h-5 w-5 text-white" />
                   </div>
-                  <div className="absolute -top-1 -right-1 h-3 w-3 rounded-full border-2 border-background bg-emerald-400"></div>
+                  <div className="absolute -top-1 -right-1 h-3 w-3 rounded-full border-2 border-background bg-emerald-400" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-foreground text-xl font-extrabold tracking-tight">
@@ -189,6 +191,7 @@ export default function Header2() {
                   <Moon className="h-5 w-5" />
                 )}
               </motion.button>
+
 
               {user ? (
                 <div className="relative">
@@ -254,7 +257,7 @@ export default function Header2() {
                             <span>Dashboard</span>
                           </Link>
 
-                          <div className="border-t border-border/50 my-1"></div>
+                          <div className="border-t border-border/50 my-1" />
 
                           <button
                             onClick={() => {

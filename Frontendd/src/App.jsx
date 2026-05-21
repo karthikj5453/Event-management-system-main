@@ -5,6 +5,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+
 import "./index.css";
 import { Toaster } from "react-hot-toast";
 import Footer from "./components/mvpblocks/footer-standard";
@@ -29,6 +30,7 @@ const ThankYou = lazy(() => import("./pages/ThankYou"));
 const Support = lazy(() => import("./pages/Support"));
 const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const QRScanner = lazy(() => import("./pages/dashboard/QRScanner"));
 
 // Protected Route Component
 const ProtectedRoute = ({ children, allowedRoles }) => {
@@ -137,7 +139,7 @@ const App = () => {
               <Route
                 path="/customer/dashboard"
                 element={
-                  <ProtectedRoute allowedRoles={["customer"]}>
+                  <ProtectedRoute allowedRoles={["customer", "attendee"]}>
                     <CustomerDashboard />
                   </ProtectedRoute>
                 }
@@ -149,6 +151,16 @@ const App = () => {
                 element={
                   <ProtectedRoute allowedRoles={["organizer"]}>
                     <OrganizerDashboard />
+                  </ProtectedRoute>
+                }
+              />
+
+              {/* Scan Attendee QR Code */}
+              <Route
+                path="/organizer/scan/:eventId"
+                element={
+                  <ProtectedRoute allowedRoles={["organizer"]}>
+                    <QRScanner />
                   </ProtectedRoute>
                 }
               />

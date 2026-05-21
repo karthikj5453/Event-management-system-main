@@ -63,7 +63,6 @@ export default function TestimonialsCarousel({
 }) {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Duplicate items to create a seamless infinite loop
   const duplicatedTestimonials = [...testimonials, ...testimonials];
 
   return (
@@ -85,8 +84,10 @@ export default function TestimonialsCarousel({
             ease: "linear",
           }}
           style={{
-            maskImage: "radial-gradient(ellipse at center, black 10%, transparent 70%)",
-            WebkitMaskImage: "radial-gradient(ellipse at center, black 10%, transparent 70%)"
+            maskImage:
+              "radial-gradient(ellipse at center, black 10%, transparent 70%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse at center, black 10%, transparent 70%)",
           }}
         />
       </div>
